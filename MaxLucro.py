@@ -40,11 +40,12 @@ class MaxLucro:
         print("Calculamos as quantidade ideais de venda de um produto a partir de seus valores de custos fixo e variável de produção. \n")
         print("Entrada: o preço do produto e o nome de um arquivo csv com 3 colunas, a primeira com as quantidades produzidas, a segunda com os custos fixos pela quantidade produzida, e a terceira os custos variaveis pela quantidade produzida. \n")
         print("Saida: Um gráfico com as variáveis economicas e os valor de quantidade ideal para determinado preço\n")
-
+        print("----------------------------\n")
     def input_data(self):
-
+        print("----------------------------\n")
         self.file = input("Digite o nome do arquivo csv de entrada (o arquivo deve estar no mesmo diretorio do executavel ou deve ser passado o caminho global como parametro) : ")
         self.preco = float(input("Digite o preço do produto :"))
+        print("----------------------------\n")
 
     def open_csv(self):
         Df = pandas.read_csv(self.file)
@@ -87,5 +88,5 @@ if __name__=="__main__":
     maxLucro.input_data()
     maxLucro.open_csv()
     maxLucro.calcula_variaveis()
-    maxLucro.plota_grafico()
     maxLucro.print_explicacao()
+    maxLucro.plota_grafico()
