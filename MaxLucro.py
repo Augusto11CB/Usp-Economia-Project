@@ -14,6 +14,24 @@ class MaxLucro:
         self.custo_marginal = None
         self.preco = None
         self.custo_total = None
+        self.intersectk = None
+
+    def calcula_ponto_interseccao(self):
+        x=None
+        for y in range(len(self.custo_medio)):
+            if(self.custo_marginal[y]>=self.custo_medio[y]):
+                x=y-1
+
+        intersect = self.custo_marginal[x]
+        cmarg = self.custo_marginal[x]
+        cmedio = self.custo_medio[x]
+
+        while(cmarg<=cmedio):
+            intersect = intersect + (self.custo_marginal[x+1]-self.custo_marginal[x])*0.01
+            cmarg =cmarg + (self.custo_marginal[x+1]-self.custo_marginal[x])*0.01
+            cmedio = cmedio + (self.custo_medio[x+1]-self.custo_medio[x])
+
+        self.intersectk = intersect
 
     def setup_wizard(self):
         print("----------------------------\n")
@@ -57,6 +75,8 @@ class MaxLucro:
         plt.legend()
         plt.show()
 
+    def print_explicacao(self):
+        print('No ponto de intersecção das curvas "preço" e "custo marginal" encontra-se o lucro máximo para o cenário em estudo. \nNo ponto de intersecção das curvas "custo marginal" e  "custo médio total" obtemos o custo total médio mínimo. Neste ponto a empresa  utiliza de maneira mais eficiente os recursos disponíveis para produzir um bem ou serviço')
 
 
 
@@ -68,3 +88,4 @@ if __name__=="__main__":
     maxLucro.open_csv()
     maxLucro.calcula_variaveis()
     maxLucro.plota_grafico()
+    maxLucro.print_explicacao()

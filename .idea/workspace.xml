@@ -12,15 +12,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Economia$MaxLucro.coverage" NAME="MaxLucro Coverage Results" MODIFIED="1531166709696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Economia$MaxLucro.coverage" NAME="MaxLucro Coverage Results" MODIFIED="1531169210314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="MaxLucro.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MaxLucro.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="55" column="58" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
+            <state relative-caret-position="249">
+              <caret line="78" column="132" lean-forward="true" selection-start-line="78" selection-start-column="132" selection-end-line="78" selection-end-column="132" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -148,6 +148,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -195,8 +196,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MaxLucro.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="55" column="58" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
+        <state relative-caret-position="249">
+          <caret line="78" column="132" lean-forward="true" selection-start-line="78" selection-start-column="132" selection-end-line="78" selection-end-column="132" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
