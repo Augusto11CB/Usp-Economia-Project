@@ -15,10 +15,10 @@ if __name__=="__main__":
         print("----------------------------\n")
         print("Digite o número correspondente para acessar cada funcionalidade:\n")
         print("****MICROECONOMIA****\n")
-        print("1 - Maximização do Lucro\n")
+        print("1 - Maximizacao do Lucro\n")
         print("2 - Elasticidade \n")
         print("****MACROECONOMIA****\n")
-        print("3 - PIB e inflação\n")
+        print("3 - PIB e inflacao\n")
         print("Para sair digite 0 \n")
 
         i = int(input("Digite o comando"))
