@@ -48,7 +48,7 @@ class MaxLucro:
         print("----------------------------\n")
 
     def open_csv(self):
-        Df = pandas.read_csv(self.file)
+        Df = pandas.read_csv(self.file,header=None)
         self.quantidades_produzidas = np.array(Df.iloc[:, 0])
         self.custos_fixos = np.array(Df.iloc[:,1])
         self.custos_variaveis = np.array(Df.iloc[:,2])
