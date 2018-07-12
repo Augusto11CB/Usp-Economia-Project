@@ -14,6 +14,7 @@ class MaxLucro:
         self.preco = None
         self.custo_total = None
         self.intersectk = None
+        np.warnings.filterwarnings('ignore')
 
     def read_csv(self):
 
@@ -85,7 +86,7 @@ class MaxLucro:
         plt.show()
 
     def print_explicacao(self):
-        print('No ponto de intersecção das curvas "preço" e "custo marginal" encontra-se o lucro máximo para o cenário em estudo. \nNo ponto de intersecção das curvas "custo marginal" e  "custo médio total" obtemos o custo total médio mínimo. Neste ponto a empresa  utiliza de maneira mais eficiente os recursos disponíveis para produzir um bem ou serviço')
+        print('No ponto de intersecção das curvas "preço" e "custo marginal" encontra-se o lucro máximo para o cenário em estudo.\nNo ponto de intersecção das curvas "custo marginal" e  "custo médio total" obtemos o custo total médio mínimo.\nNeste ponto a empresa  utiliza de maneira mais eficiente os recursos disponíveis para produzir um bem ou serviço')
 
 
 

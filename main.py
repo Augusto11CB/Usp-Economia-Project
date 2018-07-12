@@ -2,6 +2,7 @@ from MaxLucro import MaxLucro
 from  macroeconomia  import macroEconomia
 from elasticidade import Elasticidade
 from oferta_x_demanda import oferta_x_demanda
+from ISLM import ISLM
 import sys
 
 if __name__=="__main__":
@@ -10,6 +11,7 @@ if __name__=="__main__":
     el = Elasticidade()
     mc = macroEconomia()
     ofertaDemanda = oferta_x_demanda()
+    islm =ISLM()
             
 
     while True:
@@ -23,9 +25,11 @@ if __name__=="__main__":
         print("3 - Oferta e Demanda \n")
         print("****MACROECONOMIA****\n")
         print("4 - PIB e inflacao\n")
+        print("5 - Simulador IS-LM\n")
+
         print("Para sair digite 0 \n")
 
-        i = int(input("Digite o comando"))
+        i = int(input("Digite o comando: "))
 
         if(i ==1):
             maxLucro = MaxLucro()
@@ -62,6 +66,14 @@ if __name__=="__main__":
             macroEco.calcular_inflacao()
             macroEco.transpuser()
             macroEco.gerar_table()
+
+        elif(i==5):
+            islm =ISLM()
+            islm =ISLM()
+            islm.setup_wizard()
+            islm.inEvento()
+            islm.plotar()
+
         elif(i==0):
             sys.exit(0)
 

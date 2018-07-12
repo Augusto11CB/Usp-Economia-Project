@@ -44,7 +44,7 @@ class macroEconomia:
 
             b = bem.bem(anos,precos,quantidades)  
             self.bens10.append(b)
-        print(self.bens10)
+ 
 
         
     def calcular_pib_real(self):
