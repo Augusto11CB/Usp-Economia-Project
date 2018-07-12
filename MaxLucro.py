@@ -1,4 +1,3 @@
-import pandas
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -15,6 +14,15 @@ class MaxLucro:
         self.preco = None
         self.custo_total = None
         self.intersectk = None
+
+    def read_csv(self):
+
+        lines = open(self.file).readlines()
+        lines = [li.strip() for li in lines]
+        lines = [[float(x) for x in li.split(",")] for li in lines]
+        return np.array(lines)
+
+
 
     def calcula_ponto_interseccao(self):
         x=None
@@ -48,10 +56,10 @@ class MaxLucro:
         print("----------------------------\n")
 
     def open_csv(self):
-        Df = pandas.read_csv(self.file,header=None)
-        self.quantidades_produzidas = np.array(Df.iloc[:, 0])
-        self.custos_fixos = np.array(Df.iloc[:,1])
-        self.custos_variaveis = np.array(Df.iloc[:,2])
+        Df = self.read_csv()
+        self.quantidades_produzidas = Df[:,0]
+        self.custos_fixos = Df[:,1]
+        self.custos_variaveis = Df[:,2]
 
     def calcula_variaveis(self):
 

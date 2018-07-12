@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 
 class Elasticidade:
@@ -7,6 +6,14 @@ class Elasticidade:
     def __init__(self):
         self.renda_familia = np.array([])
         self.file = None
+
+
+    def read_csv(self):
+
+        lines = open(self.file).readlines()
+        lines = [li.strip() for li in lines]
+        lines = [[float(x) for x in li.split(",")] for li in lines]
+        return np.array(lines)
 
 
     def setup_wizard(self):
@@ -26,12 +33,12 @@ class Elasticidade:
 
 
     def open_csv(self):
-        Df = pd.read_csv(self.file, header=None)
-        self.renda_familia = np.array(Df.iloc[0, :])
-        self.quantidade_demandada_1 = np.array(Df.iloc[1,:])
-        self.preco_1 = np.array(Df.iloc[2,:])
-        self.quantidade_demandada_2 = np.array(Df.iloc[3,:])
-        self.preco_2 = np.array(Df.iloc[4,:])
+        Df = self.read_csv()
+        self.renda_familia = Df[0, :]
+        self.quantidade_demandada_1 = Df[1, :]
+        self.preco_1 = Df[2, :]
+        self.quantidade_demandada_2 = Df[3, :]
+        self.preco_2 = Df[4, :]
 
     def calculos(self):
 

@@ -1,12 +1,9 @@
 # -*- mode: python -*-
-import sys
-sys.setrecursionlimit(5000)
-
 
 block_cipher = None
 
 
-a = Analysis(['main.py'],
+a = Analysis(['MaxLucro.py'],
              pathex=['D:\\Fernando\\Documents\\economia\\Economia'],
              binaries=[],
              datas=[],
@@ -22,7 +19,7 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='main',
+          name='MaxLucro',
           debug=False,
           strip=False,
           upx=True,
@@ -33,4 +30,4 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=True,
-               name='main')
+               name='MaxLucro')

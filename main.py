@@ -13,7 +13,7 @@ if __name__=="__main__":
         print("----------------------------\n")
         print("PROGRAMA DE ECONOMIA\n")
         print("----------------------------\n")
-        print("Digite o número correspondente para acessar cada funcionalidade:\n")
+        print("Digite o numero correspondente para acessar cada funcionalidade:\n")
         print("****MICROECONOMIA****\n")
         print("1 - Maximizacao do Lucro\n")
         print("2 - Elasticidade \n")
