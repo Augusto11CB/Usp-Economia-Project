@@ -29,9 +29,11 @@ if __name__=="__main__":
 
         print("Para sair digite 0 \n")
 
-        i = int(input("Digite o comando: "))
+        
+        i = input("Digite o comando: ")
+      
 
-        if(i ==1):
+        if(i =='1'):
             maxLucro = MaxLucro()
             maxLucro.setup_wizard()
             maxLucro.input_data()
@@ -40,7 +42,7 @@ if __name__=="__main__":
             maxLucro.print_explicacao()
             maxLucro.plota_grafico()
 
-        elif(i==2):
+        elif(i=='2'):
             el = Elasticidade()
             el.setup_wizard()
             el.input_data()
@@ -48,7 +50,7 @@ if __name__=="__main__":
             el.calculos()
             el.resultados()
 
-        elif(i==3):
+        elif(i=='3'):
                 
             ofertaDemanda.setup_wizard()
             ofertaDemanda.input_data()
@@ -56,7 +58,7 @@ if __name__=="__main__":
             ofertaDemanda.curva_oferta_demanda()
 
 
-        elif(i==4):
+        elif(i=='4'):
             macroEco = macroEconomia()
             macroEco.setup_wizard()
             macroEco.open_txt()
@@ -67,14 +69,14 @@ if __name__=="__main__":
             macroEco.transpuser()
             macroEco.gerar_table()
 
-        elif(i==5):
+        elif(i=='5'):
             islm =ISLM()
             islm =ISLM()
             islm.setup_wizard()
             islm.inEvento()
             islm.plotar()
 
-        elif(i==0):
+        elif(i=='0'):
             sys.exit(0)
 
         else:
