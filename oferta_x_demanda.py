@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas
 
 class oferta_x_demanda():
 
@@ -19,6 +18,15 @@ class oferta_x_demanda():
     #ID - > recai sobre a demanda
     #IO - >
 
+    def read_csv(self):
+
+        lines = open(self.file).readlines()
+        lines = [li.strip() for li in lines]
+        lines = [[float(x) for x in li.split(",")] for li in lines]
+        return np.array(lines)
+
+
+
     def setup_wizard(self):
         print("----------------------------\n")
         print("Calculo da variação da curva de oferta e demanda dado criação de imposto")
@@ -36,10 +44,10 @@ class oferta_x_demanda():
         print("----------------------------\n")
 
     def open_csv(self):
-        Df = pandas.read_csv(self.file)
-        self.demandas = np.array(Df.iloc[:, 1])
-        self.ofertas = np.array(Df.iloc[:,2])
-        self.quantidades = np.array(Df.iloc[:,0])
+        Df = self.read_csv()
+        self.demandas = Df[:, 1]
+        self.ofertas = Df[:,2]
+        self.quantidades = Df[:,0]
 
 
     def curva_oferta_demanda(self):

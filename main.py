@@ -1,6 +1,7 @@
 from MaxLucro import MaxLucro
 from  macroeconomia  import macroEconomia
 from elasticidade import Elasticidade
+from oferta_x_demanda import oferta_x_demanda
 import sys
 
 if __name__=="__main__":
@@ -8,6 +9,8 @@ if __name__=="__main__":
     maxLucro = MaxLucro()
     el = Elasticidade()
     mc = macroEconomia()
+    ofertaDemanda = oferta_x_demanda()
+            
 
     while True:
         print("----------------------------\n")
@@ -17,8 +20,9 @@ if __name__=="__main__":
         print("****MICROECONOMIA****\n")
         print("1 - Maximizacao do Lucro\n")
         print("2 - Elasticidade \n")
+        print("3 - Oferta e Demanda \n")
         print("****MACROECONOMIA****\n")
-        print("3 - PIB e inflacao\n")
+        print("4 - PIB e inflacao\n")
         print("Para sair digite 0 \n")
 
         i = int(input("Digite o comando"))
@@ -41,6 +45,14 @@ if __name__=="__main__":
             el.resultados()
 
         elif(i==3):
+                
+            ofertaDemanda.setup_wizard()
+            ofertaDemanda.input_data()
+            ofertaDemanda.open_csv()
+            ofertaDemanda.curva_oferta_demanda()
+
+
+        elif(i==4):
             macroEco = macroEconomia()
             macroEco.setup_wizard()
             macroEco.open_txt()
