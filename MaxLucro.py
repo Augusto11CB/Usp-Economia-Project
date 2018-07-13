@@ -18,7 +18,7 @@ class MaxLucro:
 
     def read_csv(self):
 
-        lines = open(self.file).readlines()
+        lines = open("../Arquivos_de_Entrada/max_lucro.csv").readlines()
         lines = [li.strip() for li in lines]
         lines = [[float(x) for x in li.split(",")] for li in lines]
         return np.array(lines)
@@ -47,12 +47,12 @@ class MaxLucro:
         print("Cálculo de Lucro Máximo \n ")
         print("----------------------------\n")
         print("Calculamos as quantidade ideais de venda de um produto a partir de seus valores de custos fixo e variável de produção. \n")
-        print("Entrada: o preço do produto e o nome de um arquivo csv com 3 colunas, a primeira com as quantidades produzidas, a segunda com os custos fixos pela quantidade produzida, e a terceira os custos variaveis pela quantidade produzida. \n")
+        print("Entrada: o arquivo max_lucro.csv\n")
         print("Saida: Um gráfico com as variáveis economicas e os valor de quantidade ideal para determinado preço\n")
         print("----------------------------\n")
     def input_data(self):
         print("----------------------------\n")
-        self.file = input("Digite o nome do arquivo csv de entrada (o arquivo deve estar no mesmo diretorio do executavel ou deve ser passado o caminho global como parametro) : ")
+        #self.file = input("Digite o nome do arquivo csv de entrada (o arquivo deve estar no mesmo diretorio do executavel ou deve ser passado o caminho global como parametro) : ")
         self.preco = float(input("Digite o preço do produto :"))
         print("----------------------------\n")
 

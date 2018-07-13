@@ -38,30 +38,44 @@ class ISLM:
         if(self.evento==1):
             plt.plot(self.x,np.array([0.20,0.17,0.14,0.11,0.08]), label="IS deslocada")
             plt.xlabel("Deslocamento para direita da IS")
+            print("O Aumento do gasto público provoca um aumento na taxa de juros e na renda.\n")
+
         elif(self.evento==2):
             plt.plot(self.x,np.array([0.12,0.09,0.06,0.03,0.0]), label="IS deslocada")
             plt.xlabel("Deslocamento para esquerda da IS")
+            print("O Diminuição do gasto público provoca uma diminuição na taxa de juros e na renda.\n")
+
         elif(self.evento==3):
             plt.plot(self.x,np.array([0.12,0.09,0.06,0.03,0.0]), label="IS deslocada")
             plt.xlabel("Deslocamento para esquerda da IS")
+            print("O Aumento de impostos provoca uma diminuição na taxa de juros e na renda.\n")
+
         elif(self.evento==4):
             plt.plot(self.x,np.array([0.20,0.17,0.14,0.11,0.08]), label="IS deslocada")
             plt.xlabel("Deslocamento para direita da IS")
+            print("A Redução de impostos provoca um aumento na taxa de juros e na renda.\n")
+
         elif(self.evento==5):
             plt.plot(self.x,np.array([0.0,0.03,0.06,0.09,0.12]), label="LM deslocada")
             plt.xlabel("Deslocamento para direita da LM")
+            print("O Aumento da oferta de moeda provoca uma diminuição na taxa de juros e um aumento na renda.\n")
+
         elif(self.evento==6):
             plt.plot(self.x,np.array([0.06,0.09,0.12,0.15,0.18]), label="LM deslocada")
             plt.xlabel("Deslocamento para esquerda da LM")
+            print("A Diminuição da oferta de moeda provoca um aumento na taxa de juros e uma diminuição na renda.\n")
+
         elif(self.evento==7):
             plt.plot(self.x,np.array([0.06,0.09,0.12,0.15,0.18]), label="LM deslocada")
             plt.xlabel("Deslocamento para esquerda da LM")
+            print("O Aumento nas reservas Bancárias provoca um aumento na taxa de juros e uma diminuição na renda.\n")
         elif(self.evento==8):
             plt.plot(self.x,np.array([0.0,0.03,0.06,0.09,0.12]), label="LM deslocada")
             plt.xlabel("Deslocamento para direita da LM")
+            print("A Diminuição na taxa de reservas bancárias provoca uma diminuição na taxa de juros e um aumento na renda.\n")
         
         else:
-            print("número invalido")
+            print("número invalido\n")
         plt.legend()
         plt.show()
 

@@ -20,7 +20,7 @@ class oferta_x_demanda():
 
     def read_csv(self):
 
-        lines = open(self.file).readlines()
+        lines = open("../Arquivos_de_Entrada/oferta_demanda.csv").readlines()
         lines = [li.strip() for li in lines]
         lines = [[float(x) for x in li.split(",")] for li in lines]
         return np.array(lines)
@@ -32,13 +32,13 @@ class oferta_x_demanda():
         print("Calculo da variação da curva de oferta e demanda dado criação de imposto")
         print("----------------------------\n")
         print("Nós estimamos o impacto da criação de imposto nas curvas de demanda e oferta\n")
-        print("Entrada: São as quantidades demandadas, ofertadas no mercado, além do imposto em um arquivo csv\n(a primeira coluna representa quantidade a segunda representa o preço da demanda e a terceira coluna representa o preço da ofertada)\n")
+        print("Entrada: O arquivo oferta_demanda.csv \n")
         print("Saida: Gráfico com a curva de oferta e demanda deslocadas devido ao imposto \n")
         print("----------------------------\n")
 
     def input_data(self):
         print("----------------------------\n")
-        self.file = input("Digite o nome do arquivo csv de entrada (o arquivo deve estar no mesmo diretorio do executavel ou deve ser passado o caminho global como parametro) : ")
+        #self.file = input("Digite o nome do arquivo csv de entrada (o arquivo deve estar no mesmo diretorio do executavel ou deve ser passado o caminho global como parametro) : ")
         self.tipo_de_imposto = input("Digite o tipo do imposto (demanda ou oferta): ")
         self.imposto = float(input("Digite o valor do imposto : "))
         print("----------------------------\n")
@@ -53,15 +53,23 @@ class oferta_x_demanda():
     def curva_oferta_demanda(self):
         plt.title("Curva de oferta e demanda")
         plt.subplot(121)
-        plt.plot(self.quantidades,self.demandas,label="demanda sem imposto")        
+        plt.xlabel("Quantidade")
+        plt.ylabel("Preço")
+        plt.plot(self.quantidades,self.demandas,label="demanda sem imposto")
+
         plt.plot(self.quantidades,self.ofertas,label="oferta sem imposto")
         plt.legend()
         plt.subplot(122)
         if(self.tipo_de_imposto=="demanda"):
-            self.demandas = self.demandas + (self.demandas * self.imposto)
+            if(self.imposto>=1):
+                self.imposto = 0.99
+            self.demandas = self.demandas - (self.demandas * self.imposto)
+            print("O imposto na demanda implica a retração do consumo, puxando a curva de demanda para esquerda\n")
         else:
             self.ofertas = self.ofertas + (self.ofertas * self.imposto)
+            print("O imposto na oferta implica no aumento de preços, puxando a curva da oferta para a esquerda\n")
 
+        plt.xlabel("Quantidade")
         plt.plot(self.quantidades,self.demandas,label="demanda com imposto")        
         plt.plot(self.quantidades,self.ofertas,label="oferta com imposto")
         plt.legend()

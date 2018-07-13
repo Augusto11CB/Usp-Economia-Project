@@ -10,7 +10,7 @@ class Elasticidade:
 
     def read_csv(self):
 
-        lines = open(self.file).readlines()
+        lines = open("../Arquivos_de_Entrada/elasticidade.csv").readlines()
         lines = [li.strip() for li in lines]
         lines = [[float(x) for x in li.split(",")] for li in lines]
         return np.array(lines)
@@ -21,14 +21,14 @@ class Elasticidade:
         print("Cálculo da Elasticidade \n ")
         print("----------------------------\n")
         print("Calculamos a elasticidade de renda, a elasticidade de preço da demanda de um produto e a elasticidade cruzada entre dois produtos. \n")
-        print("Entrada: nome de um arquivo csv organizando as informações em linhas: A primeira será a renda das familias, e as demais linhas serão organizadas em blocos de duas linhas, com cada bloco representando um produto. A primeira linha de cada bloco indica a quantidade demanda daquele produto e a segunda linha do bloco o preço; \n")
+        print("Entrada: o arquivo elasticidade.csv \n")
         print("Saida: O coeficiente de elasticidade de preço da demanda, de preço e cruzada e uma explicação sobre o resultado\n")
         print("----------------------------\n")
 
 
     def input_data(self):
         print("----------------------------\n")
-        self.file = input("Digite o nome do arquivo csv de entrada (o arquivo deve estar no mesmo diretorio do executavel ou deve ser passado o caminho global como parametro) : ")
+        #self.file = input("Digite o nome do arquivo csv de entrada (o arquivo deve estar no mesmo diretorio do executavel ou deve ser passado o caminho global como parametro) : ")
         print("----------------------------\n")
 
 
